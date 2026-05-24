@@ -26,7 +26,7 @@ colors:
   cream-50:   "#faf3e2"         # primary text on ink
   cream-100:  "#f0e6ce"         # body text on ink (default)
   warm-300:   "#c2b39a"         # secondary muted on ink
-  warm-500:   "#897a63"         # tertiary disabled on ink
+  warm-500:   "#897a63"         # disabled only — WCAG-exempté (4.41:1, non-conforme si texte actif)
   paper-100:  "#f5ecd6"         # warm cream — fond print clair
   paper-200:  "#e8dcc0"         # paper aged
   paper-300:  "#d6c79e"         # paper darker / kraft
@@ -58,7 +58,7 @@ colors:
   success:    "#6f8a3e"
   success-bg: "#2a3318"
   warning:    "#d4a13a"
-  danger:     "#c14f2c"
+  danger:     "#d85535"         # corrigé WCAG AA (#c14f2c était 3.88:1 → FAIL)
   danger-bg:  "#3a1612"
   info:       "#6b8aa8"
 
@@ -652,7 +652,7 @@ quand deux CTAs ne peuvent pas être l'un orange et l'autre outline.
 | `cream-50` | `#faf3e2` | Primary text on ink — display, titres, eyebrows hero |
 | `cream-100` | `#f0e6ce` | Body text on ink (default `<body>`) |
 | `warm-300` | `#c2b39a` | Secondary muted text, captions, sub-lines |
-| `warm-500` | `#897a63` | Tertiary / disabled state |
+| `warm-500` | `#897a63` | État **disabled uniquement** — ⚠ WCAG-exempté (4.41:1 < 4.5 — non-conforme si texte actif) |
 | `paper-100` | `#f5ecd6` | Warm cream — fond principal des supports print (menu, cartes de visite) |
 | `paper-200` | `#e8dcc0` | Paper aged — variation print, fond card sur fond paper |
 | `paper-300` | `#d6c79e` | Paper darker / kraft — étiquettes emporter, packaging |
@@ -703,7 +703,7 @@ quand deux CTAs ne peuvent pas être l'un orange et l'autre outline.
 | `success` | `#6f8a3e` | Validation form, état accepté |
 | `success-bg` | `#2a3318` | Background success card |
 | `warning` | `#d4a13a` | Avertissement non bloquant |
-| `danger` | `#c14f2c` | Erreur, état refusé, suppression |
+| `danger` | `#d85535` | Erreur, état refusé, suppression — corrigé WCAG AA (ex. `#c14f2c` → 3.88:1) |
 | `danger-bg` | `#3a1612` | Background danger card |
 | `info` | `#6b8aa8` | Information neutre (bleu sourd, jamais saturé) |
 
@@ -726,21 +726,51 @@ quand deux CTAs ne peuvent pas être l'un orange et l'autre outline.
 
 ### Ratios de contraste (WCAG)
 
-Vérifiés sur les combinaisons canoniques (target AA = 4.5:1 body, 3:1 large text) :
+Vérifiés sur les combinaisons canoniques (WCAG 2.2 — AA = 4.5:1 texte normal, 3:1 grand texte ≥ 18px ou 14px bold).
+Ratios calculés par formule WCAG officielle (IEC 61966-2-1, gamma 2.4).
+
+#### Texte sur fonds sombres (usage principal)
 
 | Foreground | Background | Ratio | Verdict |
 |---|---|---|---|
-| `cream-50 #faf3e2` | `ink-1000 #0a0908` | **17.8 : 1** | AAA |
-| `cream-50` | `ink-900 #16140f` | **15.2 : 1** | AAA |
-| `cream-50` | `ink-800 #211e19` | **12.4 : 1** | AAA |
-| `cream-100 #f0e6ce` | `ink-900` | **13.6 : 1** | AAA |
-| `orange-500 #d97a2a` | `ink-900` | **5.4 : 1** | AA body / AAA large |
-| `orange-400 #ea934a` | `ink-900` | **6.8 : 1** | AAA |
-| `gold-400 #d4af5a` | `ink-900` | **7.9 : 1** | AAA |
-| `on-paper-1 #1a1108` | `paper-100 #f5ecd6` | **14.3 : 1** | AAA |
-| `orange-700 #7e3f10` | `paper-100` | **5.9 : 1** | AA |
+| `cream-50 #faf3e2` | `ink-1000 #0a0908` | **18.0 : 1** | AAA |
+| `cream-50` | `ink-900 #16140f` | **16.6 : 1** | AAA |
+| `cream-50` | `ink-800 #211e19` | **15.0 : 1** | AAA |
+| `cream-100 #f0e6ce` | `ink-900` | **14.8 : 1** | AAA |
+| `cream-100` | `ink-700 #2d2925` | **11.6 : 1** | AAA |
+| `warm-300 #c2b39a` | `ink-900` (captions, sub-lines) | **9.0 : 1** | AAA |
+| `warm-500 #897a63` | `ink-900` (disabled only — exempté WCAG) | **4.4 : 1** | exempté |
+| `orange-500 #d97a2a` | `ink-900` | **5.9 : 1** | AA |
+| `orange-400 #ea934a` | `ink-900` | **7.7 : 1** | AAA |
+| `gold-400 #d4af5a` | `ink-900` | **8.8 : 1** | AAA |
 
-**Règle stricte** : sur les textes critiques (CTAs, body, captions), toujours viser AA minimum. Pour les éléments décoratifs (stamps watermark, atmospheres, filigrane), opacity 0.20-0.50 peut tomber sous AA — c'est intentionnel (décor).
+#### Texte sur fonds clairs (print, paper)
+
+| Foreground | Background | Ratio | Verdict |
+|---|---|---|---|
+| `on-paper-1 #1a1108` | `paper-100 #f5ecd6` | **15.8 : 1** | AAA |
+| `on-paper-2 #4a3422` | `paper-100` | **9.9 : 1** | AAA |
+| `on-paper-3 #7a5b3f` | `paper-100` | **5.3 : 1** | AA |
+| `orange-700 #7e3f10` | `paper-100` | **6.9 : 1** | AA |
+
+#### Texte sur composants colorés (boutons)
+
+| Foreground | Background | Ratio | Verdict |
+|---|---|---|---|
+| `primary-fg #1a0e04` | `orange-500 #d97a2a` (btn primary) | **6.1 : 1** | AA |
+| `primary-fg #1a0e04` | `gold-400 #d4af5a` (btn Festin) | **9.1 : 1** | AAA |
+| `secondary-fg #0f1404` | `olive-500 #818825` (btn.olive) | **4.9 : 1** | AA |
+
+#### Couleurs sémantiques sur ink-900
+
+| Token | Hex | Ratio | Verdict |
+|---|---|---|---|
+| `success` | `#6f8a3e` | **4.7 : 1** | AA |
+| `danger` | `#d85535` | **4.6 : 1** | AA ✓ (corrigé — ex. `#c14f2c` = 3.88:1 FAIL) |
+| `warning` | `#d4a13a` | **7.9 : 1** | AAA |
+| `info` | `#6b8aa8` | **5.1 : 1** | AA |
+
+**Règle stricte** : sur les textes critiques (CTAs, body, captions, messages d'erreur), toujours viser AA minimum. Pour les éléments décoratifs (stamps watermark, atmospheres, filigrane), opacity 0.20-0.50 peut tomber sous AA — c'est intentionnel (décor).
 
 ---
 
@@ -1573,6 +1603,34 @@ toujours `primary` ou `outline` (orange).*
 flèche orientée (`→` `↗`) AVANT le label pour appeler à l'action, jamais
 après. Transition `transform .25s` + `background-color .25s`.
 
+#### Focus clavier — spec `:focus-visible` (WCAG 2.4.7 / 2.4.11)
+
+Tout élément interactif (boutons, liens, inputs, chips, cards cliquables)
+doit afficher un indicateur de focus clavier visible. Recette canonique :
+
+```css
+:focus-visible {
+  outline: 2px solid var(--orange-400);   /* #ea934a — 7.7:1 sur ink-900 */
+  outline-offset: 3px;
+  border-radius: inherit;                  /* épouse la forme pill ou card */
+}
+
+/* Supprime l'outline pour les utilisateurs souris/tactile */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+```
+
+**Pourquoi `outline: 2px solid` et pas `1px dashed`** : WCAG 2.4.11 (AA,
+nouveau en 2.2) exige une surface d'indicateur ≥ périmètre du composant ×
+2px. Un trait de 1px à 55 % d'opacité ne satisfait pas ce critère. Le
+`2px solid orange-400` à pleine opacité passe le ratio de changement
+visuel 3:1 requis (fond ink-900 → outline orange 7.7:1).
+
+**⚠ Ne pas confondre** le pattern décoratif "tampon postal officiel"
+(`1px dashed rgba(217,122,42,.55)`) avec le focus clavier : l'un est une
+texture esthétique, l'autre est une obligation d'accessibilité.
+
 #### Bouton dans une carte — règle critique
 
 Un bouton inscrit dans une carte d'information (concert, produit,
@@ -2371,6 +2429,9 @@ chromatique de domaine doit rester clair.
 - Décor en `aria-hidden` (lecteurs d'écran ignorent les atmospheres)
 - `prefers-reduced-motion: reduce` désactive toutes animations (halos pulsants, marquees, transitions)
 - Modales / galeries : navigation flèches ← →, swipe tactile, Échap, clic backdrop, bouton ✕
+- **Focus clavier** : `:focus-visible { outline: 2px solid var(--orange-400); outline-offset: 3px; }` sur tout élément interactif — WCAG 2.4.7 / 2.4.11 (voir § Focus clavier dans Components)
+- **Couleur `danger`** : utiliser `#d85535` (4.6:1 AA) — jamais `#c14f2c` (3.88:1 FAIL) pour les messages d'erreur texte
+- **`warm-500`** : réservé aux états `disabled` uniquement (exempté WCAG) — texte tertiaire actif → `warm-300` (9.0:1 AAA)
 
 ✅ **Copy & voice**
 - Copy générique (sans dates dures) sur leads/intros de section
