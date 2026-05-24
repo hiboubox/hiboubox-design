@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-label="Rose des vents">
+  <g>
+    <circle cx="0" cy="0" r="94" stroke-width="1"></circle>
+    <circle cx="0" cy="0" r="90" stroke-width=".5" stroke-dasharray="2 2" opacity=".6"></circle>
+    <circle cx="0" cy="0" r="34" stroke-width=".8"></circle>
+    <circle cx="0" cy="0" r="28" stroke-width=".4" opacity=".7"></circle>
+    <line x1="0.00" y1="-86.00" x2="0.00" y2="-94.00" stroke-width="1.6"></line>
+    <line x1="7.84" y1="-89.66" x2="8.19" y2="-93.64" stroke-width="0.6"></line>
+    <line x1="15.63" y1="-88.63" x2="16.32" y2="-92.57" stroke-width="0.6"></line>
+    <line x1="22.78" y1="-85.00" x2="24.33" y2="-90.80" stroke-width="0.6"></line>
+    <line x1="30.78" y1="-84.57" x2="32.15" y2="-88.33" stroke-width="0.6"></line>
+    <line x1="38.04" y1="-81.57" x2="39.73" y2="-85.19" stroke-width="0.6"></line>
+    <line x1="44.00" y1="-76.21" x2="47.00" y2="-81.41" stroke-width="0.6"></line>
+    <line x1="51.62" y1="-73.72" x2="53.92" y2="-77.00" stroke-width="0.6"></line>
+    <line x1="57.85" y1="-68.94" x2="60.42" y2="-72.01" stroke-width="0.6"></line>
+    <line x1="60.81" y1="-60.81" x2="66.47" y2="-66.47" stroke-width="1.6"></line>
+    <line x1="68.94" y1="-57.85" x2="72.01" y2="-60.42" stroke-width="0.6"></line>
+    <line x1="73.72" y1="-51.62" x2="77.00" y2="-53.92" stroke-width="0.6"></line>
+    <line x1="76.21" y1="-44.00" x2="81.41" y2="-47.00" stroke-width="0.6"></line>
+    <line x1="81.57" y1="-38.04" x2="85.19" y2="-39.73" stroke-width="0.6"></line>
+    <line x1="84.57" y1="-30.78" x2="88.33" y2="-32.15" stroke-width="0.6"></line>
+    <line x1="85.00" y1="-22.78" x2="90.80" y2="-24.33" stroke-width="0.6"></line>
+    <line x1="88.63" y1="-15.63" x2="92.57" y2="-16.32" stroke-width="0.6"></line>
+    <line x1="89.66" y1="-7.84" x2="93.64" y2="-8.19" stroke-width="0.6"></line>
+    <line x1="86.00" y1="-0.00" x2="94.00" y2="-0.00" stroke-width="1.6"></line>
+    <line x1="89.66" y1="7.84" x2="93.64" y2="8.19" stroke-width="0.6"></line>
+    <line x1="88.63" y1="15.63" x2="92.57" y2="16.32" stroke-width="0.6"></line>
+    <line x1="85.00" y1="22.78" x2="90.80" y2="24.33" stroke-width="0.6"></line>
+    <line x1="84.57" y1="30.78" x2="88.33" y2="32.15" stroke-width="0.6"></line>
+    <line x1="81.57" y1="38.04" x2="85.19" y2="39.73" stroke-width="0.6"></line>
+    <line x1="76.21" y1="44.00" x2="81.41" y2="47.00" stroke-width="0.6"></line>
+    <line x1="73.72" y1="51.62" x2="77.00" y2="53.92" stroke-width="0.6"></line>
+    <line x1="68.94" y1="57.85" x2="72.01" y2="60.42" stroke-width="0.6"></line>
+    <line x1="60.81" y1="60.81" x2="66.47" y2="66.47" stroke-width="1.6"></line>
+    <line x1="57.85" y1="68.94" x2="60.42" y2="72.01" stroke-width="0.6"></line>
+    <line x1="51.62" y1="73.72" x2="53.92" y2="77.00" stroke-width="0.6"></line>
+    <line x1="44.00" y1="76.21" x2="47.00" y2="81.41" stroke-width="0.6"></line>
+    <line x1="38.04" y1="81.57" x2="39.73" y2="85.19" stroke-width="0.6"></line>
+    <line x1="30.78" y1="84.57" x2="32.15" y2="88.33" stroke-width="0.6"></line>
+    <line x1="22.78" y1="85.00" x2="24.33" y2="90.80" stroke-width="0.6"></line>
+    <line x1="15.63" y1="88.63" x2="16.32" y2="92.57" stroke-width="0.6"></line>
+    <line x1="7.84" y1="89.66" x2="8.19" y2="93.64" stroke-width="0.6"></line>
+    <line x1="0.00" y1="86.00" x2="0.00" y2="94.00" stroke-width="1.6"></line>
+    <line x1="-7.84" y1="89.66" x2="-8.19" y2="93.64" stroke-width="0.6"></line>
+    <line x1="-15.63" y1="88.63" x2="-16.32" y2="92.57" stroke-width="0.6"></line>
+    <line x1="-22.78" y1="85.00" x2="-24.33" y2="90.80" stroke-width="0.6"></line>
+    <line x1="-30.78" y1="84.57" x2="-32.15" y2="88.33" stroke-width="0.6"></line>
+    <line x1="-38.04" y1="81.57" x2="-39.73" y2="85.19" stroke-width="0.6"></line>
+    <line x1="-44.00" y1="76.21" x2="-47.00" y2="81.41" stroke-width="0.6"></line>
+    <line x1="-51.62" y1="73.72" x2="-53.92" y2="77.00" stroke-width="0.6"></line>
+    <line x1="-57.85" y1="68.94" x2="-60.42" y2="72.01" stroke-width="0.6"></line>
+    <line x1="-60.81" y1="60.81" x2="-66.47" y2="66.47" stroke-width="1.6"></line>
+    <line x1="-68.94" y1="57.85" x2="-72.01" y2="60.42" stroke-width="0.6"></line>
+    <line x1="-73.72" y1="51.62" x2="-77.00" y2="53.92" stroke-width="0.6"></line>
+    <line x1="-76.21" y1="44.00" x2="-81.41" y2="47.00" stroke-width="0.6"></line>
+    <line x1="-81.57" y1="38.04" x2="-85.19" y2="39.73" stroke-width="0.6"></line>
+    <line x1="-84.57" y1="30.78" x2="-88.33" y2="32.15" stroke-width="0.6"></line>
+    <line x1="-85.00" y1="22.78" x2="-90.80" y2="24.33" stroke-width="0.6"></line>
+    <line x1="-88.63" y1="15.63" x2="-92.57" y2="16.32" stroke-width="0.6"></line>
+    <line x1="-89.66" y1="7.84" x2="-93.64" y2="8.19" stroke-width="0.6"></line>
+    <line x1="-86.00" y1="0.00" x2="-94.00" y2="0.00" stroke-width="1.6"></line>
+    <line x1="-89.66" y1="-7.84" x2="-93.64" y2="-8.19" stroke-width="0.6"></line>
+    <line x1="-88.63" y1="-15.63" x2="-92.57" y2="-16.32" stroke-width="0.6"></line>
+    <line x1="-85.00" y1="-22.78" x2="-90.80" y2="-24.33" stroke-width="0.6"></line>
+    <line x1="-84.57" y1="-30.78" x2="-88.33" y2="-32.15" stroke-width="0.6"></line>
+    <line x1="-81.57" y1="-38.04" x2="-85.19" y2="-39.73" stroke-width="0.6"></line>
+    <line x1="-76.21" y1="-44.00" x2="-81.41" y2="-47.00" stroke-width="0.6"></line>
+    <line x1="-73.72" y1="-51.62" x2="-77.00" y2="-53.92" stroke-width="0.6"></line>
+    <line x1="-68.94" y1="-57.85" x2="-72.01" y2="-60.42" stroke-width="0.6"></line>
+    <line x1="-60.81" y1="-60.81" x2="-66.47" y2="-66.47" stroke-width="1.6"></line>
+    <line x1="-57.85" y1="-68.94" x2="-60.42" y2="-72.01" stroke-width="0.6"></line>
+    <line x1="-51.62" y1="-73.72" x2="-53.92" y2="-77.00" stroke-width="0.6"></line>
+    <line x1="-44.00" y1="-76.21" x2="-47.00" y2="-81.41" stroke-width="0.6"></line>
+    <line x1="-38.04" y1="-81.57" x2="-39.73" y2="-85.19" stroke-width="0.6"></line>
+    <line x1="-30.78" y1="-84.57" x2="-32.15" y2="-88.33" stroke-width="0.6"></line>
+    <line x1="-22.78" y1="-85.00" x2="-24.33" y2="-90.80" stroke-width="0.6"></line>
+    <line x1="-15.63" y1="-88.63" x2="-16.32" y2="-92.57" stroke-width="0.6"></line>
+    <line x1="-7.84" y1="-89.66" x2="-8.19" y2="-93.64" stroke-width="0.6"></line>
+    <path d="M35.36,-35.36 L3.54,3.54 L-5.66,5.66 Z" fill="currentColor" fill-opacity="0.55"></path><path d="M35.36,-35.36 L-3.54,-3.54 L-5.66,5.66 Z" fill="currentColor" fill-opacity="0.25"></path>
+    <path d="M35.36,35.36 L-3.54,3.54 L-5.66,-5.66 Z" fill="currentColor" fill-opacity="0.55"></path><path d="M35.36,35.36 L3.54,-3.54 L-5.66,-5.66 Z" fill="currentColor" fill-opacity="0.25"></path>
+    <path d="M-35.36,35.36 L-3.54,-3.54 L5.66,-5.66 Z" fill="currentColor" fill-opacity="0.55"></path><path d="M-35.36,35.36 L3.54,3.54 L5.66,-5.66 Z" fill="currentColor" fill-opacity="0.25"></path>
+    <path d="M-35.36,-35.36 L3.54,-3.54 L5.66,5.66 Z" fill="currentColor" fill-opacity="0.55"></path><path d="M-35.36,-35.36 L-3.54,3.54 L5.66,5.66 Z" fill="currentColor" fill-opacity="0.25"></path>
+    <path d="M0.00,-84.00 L7.00,-0.00 L0.00,8.00 Z" fill="currentColor" fill-opacity="0.95"></path><path d="M0.00,-84.00 L-7.00,-0.00 L0.00,8.00 Z" fill="currentColor" fill-opacity="0.4"></path>
+    <path d="M84.00,-0.00 L0.00,7.00 L-8.00,0.00 Z" fill="currentColor" fill-opacity="0.95"></path><path d="M84.00,-0.00 L0.00,-7.00 L-8.00,0.00 Z" fill="currentColor" fill-opacity="0.4"></path>
+    <path d="M0.00,84.00 L-7.00,0.00 L-0.00,-8.00 Z" fill="currentColor" fill-opacity="0.95"></path><path d="M0.00,84.00 L7.00,-0.00 L-0.00,-8.00 Z" fill="currentColor" fill-opacity="0.4"></path>
+    <path d="M-84.00,0.00 L-0.00,-7.00 L8.00,-0.00 Z" fill="currentColor" fill-opacity="0.95"></path><path d="M-84.00,0.00 L0.00,7.00 L8.00,-0.00 Z" fill="currentColor" fill-opacity="0.4"></path>
+    <circle cx="0" cy="0" r="3" fill="currentColor"></circle>
+    <path d="M-3,-92 L0,-100 L3,-92 Z" fill="currentColor"></path>
+    <text x="0" y="-106" text-anchor="middle" font-family="Cormorant Garamond, EB Garamond, serif" font-style="italic" font-size="13" fill="currentColor">N</text><text x="106" y="4" text-anchor="middle" font-family="Cormorant Garamond, EB Garamond, serif" font-style="italic" font-size="13" fill="currentColor">E</text><text x="0" y="114" text-anchor="middle" font-family="Cormorant Garamond, EB Garamond, serif" font-style="italic" font-size="13" fill="currentColor">S</text><text x="-106" y="4" text-anchor="middle" font-family="Cormorant Garamond, EB Garamond, serif" font-style="italic" font-size="13" fill="currentColor">O</text>
+  </g>
+</svg>

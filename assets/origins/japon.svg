@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80" width="140" height="80" aria-label="NIHON">
+  <ellipse cx="70" cy="40" rx="66" ry="36" fill="none" stroke="currentColor" stroke-width="1.4"/>
+  <ellipse cx="70" cy="40" rx="60" ry="30" fill="none" stroke="currentColor" stroke-width="0.7" stroke-dasharray="2 2.4" opacity="0.55"/>
+  <rect x="30" y="23" width="80" height="16" fill="none" stroke="currentColor" stroke-width="0.9" stroke-dasharray="2.6 2" opacity="0.95"/>
+  <text x="70" y="35.0" text-anchor="middle" font-family="'Special Elite','Courier New',monospace,serif" font-size="15" letter-spacing="0.4" fill="currentColor" font-weight="700">日本</text>
+  <g transform="translate(70 55) scale(0.78)">
+    <circle cx="6" cy="-6" r="3.5" fill="currentColor"/>
+    <path d="M-12 6 L-2 -6 L0 -8 L2 -6 L12 6 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M-6 0 L-4 -2 L-2 -1 L0 -4 L2 -1 L4 -2 L6 0" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.7"/>
+    <line x1="-12" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="0.5" opacity="0.5" stroke-dasharray="1.5 1"/>
+  </g>
+  <circle cx="10" cy="40" r="1.2" fill="currentColor" opacity="0.6"/>
+  <circle cx="130" cy="40" r="1.2" fill="currentColor" opacity="0.6"/>
+</svg>

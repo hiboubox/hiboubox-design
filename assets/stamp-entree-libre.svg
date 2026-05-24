@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -70 300 140" overflow="visible" aria-label="Postal stamp ENTRÉE LIBRE">
+  <g fill="none" stroke="currentColor" stroke-width="2.4">
+    <rect x="-138" y="-58" width="276" height="116" rx="8"></rect>
+    <rect x="-130" y="-50" width="260" height="100" rx="4" stroke-width="1"></rect>
+  </g>
+  <g font-family="Special Elite, monospace" fill="currentColor">
+    <text x="0" y="2" text-anchor="middle" font-size="30" font-weight="700" letter-spacing="1.5">ENTRÉE LIBRE</text>
+    <text x="0" y="28" text-anchor="middle" font-size="9.5" letter-spacing="2.5">PARTICIPATION ARTISTES</text>
+  </g>
+  <g fill="currentColor">
+    <circle cx="-132" cy="-52" r="1.5"></circle>
+    <circle cx="132" cy="-52" r="1.5"></circle>
+    <circle cx="-132" cy="52" r="1.5"></circle>
+    <circle cx="132" cy="52" r="1.5"></circle>
+  </g>
+</svg>
