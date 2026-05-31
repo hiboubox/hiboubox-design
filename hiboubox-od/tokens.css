@@ -9,6 +9,97 @@
    `colors:` / `typography:` / `spacing:` blocks of DESIGN.md.
    ============================================================ */
 
+/* ============================================================
+   LAYER A — OPEN DESIGN CANONICAL CONTRACT
+   These are the token names the OD showcase ("Vitrine") template and
+   generator agents consume. They MUST be declared here (no global
+   cascade exists at runtime). Bound to HIBOUBOX brand values:
+   dark ink background · cream text · single orange accent.
+   ============================================================ */
+:root {
+  /* Identity (A1) — dark-first */
+  --bg:           #16140f; /* ink-900  — page background          */
+  --surface:      #211e19; /* ink-800  — raised surface, header   */
+  --surface-warm: #2d2925; /* ink-700  — card surface             */
+  --fg:           #faf3e2; /* cream-50 — primary text             */
+  --fg-2:         #f0e6ce; /* cream-100— body text                */
+  --muted:        #c2b39a; /* warm-300 — captions, sub-lines      */
+  --meta:         #ea934a; /* orange-400 — eyebrow/meta accent text*/
+  --border:       #3a3530; /* ink-600  — visible border           */
+  --border-soft:  #2d2925; /* ink-700  — soft border              */
+
+  /* Accent (A1) — the single brass-orange */
+  --accent:        #d97a2a; /* orange-500                          */
+  --accent-on:     #1a0e04; /* dark ink text on orange (6.1:1 AA)  */
+  --accent-hover:  #ea934a; /* orange-400 — hover is LIGHTER       */
+  --accent-active: #b35e1a; /* orange-600 — pressed is darker      */
+  --accent-light:  rgba(217,122,42,0.14); /* soft accent wash/tag bg */
+  --elev-ring-accent: 0 0 0 1px var(--accent);
+
+  /* Semantic (A2) — HIBOUBOX-tuned */
+  --success: #6f8a3e;
+  --warn:    #d4a13a;
+  --danger:  #d85535; /* WCAG AA 4.6:1 */
+
+  /* Fonts (A1) */
+  --font-display: "Bungee", "Bowlby One", "Ultra", "Arial Black", sans-serif;
+  --font-body:    "Lato", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono:    "Special Elite", "Courier Prime", "Courier New", monospace;
+
+  /* Type scale (A1 structure) */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   20px;
+  --text-xl:   28px;
+  --text-2xl:  44px;
+  --text-3xl:  64px;
+  --text-4xl:  92px;
+  --leading-body:    1.55;
+  --leading-dense:   1.2;
+  --leading-tight:   1.05;
+  --leading-display: 0.9;
+  --tracking-display: -0.01em;
+  --tracking-eyebrow: 0.22em;
+  --tracking-label:   0.16em;
+
+  /* Spacing (A2) — 4px grid */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-7: 28px;  --space-8: 32px;
+  --space-12: 48px; --space-16: 64px; --space-18: 72px; --space-20: 80px; --space-22: 88px;
+
+  /* Layout (A1 structure) */
+  --container-max:            1280px;
+  --container-gutter-desktop: 64px;
+  --container-gutter-tablet:  32px;
+  --container-gutter-phone:   20px;
+  --section-y-desktop: 100px;
+  --section-y-tablet:  72px;
+  --section-y-phone:   56px;
+
+  /* Radius (A2) — franc angles preferred */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --radius-pill: 9999px;
+
+  /* Elevation (A2) — warm only, never blurry blue */
+  --elev-flat:   none;
+  --elev-ring:   0 0 0 1px var(--border);
+  --elev-raised: 0 6px 24px rgba(0,0,0,0.55);
+
+  /* Focus (A2) — orange ring (WCAG 2.4.11) */
+  --focus-ring: 0 0 0 3px rgba(234,147,74,0.45);
+
+  /* Motion (A2) */
+  --motion-fast:   150ms;
+  --motion-base:   200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
 :root {
 
   /* ====================================================
