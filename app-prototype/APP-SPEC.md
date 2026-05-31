@@ -76,20 +76,51 @@ line-art.
 
 > Mettre à jour la colonne **Statut** après chaque session.
 
-## 6. Workflow inter-sessions (toujours le même projet)
+## 6. Workflow inter-sessions (toujours le même projet, auto-documenté)
+
+Le projet s'auto-entretient via `CLAUDE.md` + `memory/` (voir §8). Chaque session :
 
 1. Ouvrir le projet OD **« HIBOUBOX App »** (design system HIBOUBOX sélectionné).
-2. S'assurer que cet `APP-SPEC.md` est présent dans le projet.
+2. **Début de session** : l'agent LIT `CLAUDE.md` + `memory/INDEX.md` +
+   `memory/screen-conventions.md` pour reprendre le fil.
 3. Activer le skill **`mobile-app`**.
 4. Coller le prompt de l'écran à faire (voir `OD-PROMPTS.md`). Chaque prompt
-   commence par : *« Reprends le cadre iPhone + la tab bar de l'écran Accueil
-   du projet pour la cohérence. »*
-5. Mettre à jour le **statut** dans §5 et noter l'écran produit.
+   (II→VII) reprend le cadre/tab bar de l'Accueil pour la cohérence.
+5. **Fin de session** : l'agent met à jour le **statut** (CLAUDE.md §inventaire),
+   écrit `memory/sessions/SESSION-XX-<ecran>.md`, et complète l'INDEX.
 
 ## 7. Convention de cohérence (à ne pas dévier)
 
 - Même cadre device, même tab bar (mêmes icônes, mêmes positions), même échelle
-  typo entre tous les écrans.
+  typo entre tous les écrans → valeurs verrouillées dans
+  `memory/screen-conventions.md` après l'Accueil.
 - Numérotation cartouche **séquentielle** : Accueil = `Nº I`, Programmation =
   `Nº II`, … (voir §5).
 - Un seul accent orange dominant + un CTA orange par écran (budget = 2).
+
+## 8. Suivi auto-entretenu — `CLAUDE.md` + `memory/`
+
+Créés par l'agent à la **session 1** (prompt de lancement), maintenus ensuite.
+
+```
+HIBOUBOX App (projet OD)
+├── CLAUDE.md                       ← bible du projet (lue à chaque session)
+├── memory/
+│   ├── INDEX.md                    ← pointeur 1 ligne par entrée
+│   ├── decisions.md                ← décisions design/nav + pourquoi (append)
+│   ├── screen-conventions.md       ← valeurs VERROUILLÉES du gabarit Accueil
+│   │                                  (dims cadre, hauteur/icônes tab bar,
+│   │                                   échelle typo, tokens) — référence pixel
+│   └── sessions/
+│       └── SESSION-01-accueil.md   ← log par session (produit, choix, next)
+└── <Écran>.html                    ← un artefact par écran
+```
+
+**`CLAUDE.md`** contient : objectif & stack cible (Expo/RN + Directus +
+CoverManager + expo-notifications + n8n), design system actif + règles mobile,
+navigation complète, modèle de données Directus, inventaire écrans + statut,
+conventions de cohérence, protocole de session, hors-scope proto, glossaire.
+
+**Protocole de session** (gravé dans CLAUDE.md) — début : lire CLAUDE.md +
+memory/ ; fin : MAJ statut + `memory/sessions/SESSION-XX.md` + INDEX. C'est ce
+qui assure le suivi d'une session à l'autre.
