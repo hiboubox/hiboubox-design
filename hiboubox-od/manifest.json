@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "od-design-system-project/v1",
+  "id": "hiboubox",
+  "name": "HIBOUBOX",
+  "category": "Restaurant & Hospitality",
+  "description": "Restaurant-concert-bar au Vercors. Palette ink/cream/orange, grammaire cartographie + jazz + passeport. Sous-marque traiteur Le Festin du Hibou (accent gold).",
+  "source": {
+    "type": "bundled",
+    "origin": "hiboubox/hiboubox-design"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css"
+  },
+  "assetsDir": "assets",
+  "previewDir": "preview",
+  "importMode": "verbatim",
+  "preview": {
+    "dir": "preview",
+    "pages": [
+      {
+        "path": "preview/brand-showcase.html",
+        "role": "showcase",
+        "title": "HIBOUBOX — Brand Showcase"
+      }
+    ]
+  }
+}

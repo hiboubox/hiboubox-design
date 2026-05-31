@@ -286,10 +286,9 @@ motifs below; signature SVGs ship in `assets/stamps/` and `assets/tabs/`.
 | `stamp-par-avion.svg`      | Hatched red/blue band `PAR AVION · VIA AIR MAIL`        |
 
 ### Origin stamps (canonical oval structure, viewBox 140×80)
-56 country stamps + 4 French-region stamps + 15 wine-region stamps exist in the
-source repo (`assets/origins/`, not bundled here to keep the package light;
-regenerate following this structure). Every origin stamp follows the SAME
-structure so a single filter chain recolors them all:
+56 country stamps + 4 French-region stamps (in `assets/origins/`) + 15 wine-region
+stamps (in `assets/origins/vins/`) ship with this package. Every origin stamp
+follows the SAME structure so a single filter chain recolors them all:
 1. Outer oval ring `<ellipse>` stroke currentColor 1.4.
 2. Inner dashed oval ring, opacity 0.55.
 3. Dashed rectangular plate framing the name.
@@ -678,12 +677,21 @@ Food: `tapas.svg` `planches.svg` `fumaison.svg` `currys.svg` `pates.svg`
 Stroke 1.4–1.6, fill none, recolor via filter chain. Sizes: sub-tab 38px desktop
 / 28px mobile; card-head circle 56×56 / 44×44; mini-info cell 46×46 / 30×30.
 
-### Origin stamps (in source repo, not bundled)
-`assets/origins/<slug>.svg` (56 countries + 4 FR regions) and
-`assets/origins/vins/<slug>.svg` (15 wine regions), viewBox 140×80, gold filter
-(`--filter-gold-400`), watermark opacity ~0.72. Regenerate from the canonical oval
-structure in §4 if needed. Country slugs: france, italie, japon, inde, mexique,
-maroc, vietnam, etc. Wine slugs: bordeaux, bourgogne, champagne, savoie, rhone, etc.
+### Origin stamps — `assets/origins/` (56 countries + 4 FR regions) & `assets/origins/vins/` (15 wine regions)
+viewBox 140×80, monochrome `currentColor`, gold filter (`--filter-gold-400`),
+watermark opacity ~0.72, max 1 large watermark per section. Canonical oval
+structure in §4.
+- **Countries (52):** afriquesud, algerie, allemagne, antilles, argentine,
+  australie, autriche, belgique, bresil, cambodge, chili, chine, colombie, coree,
+  cuba, dominicaine, egypte, espagne, etats-unis, ethiopie, france, grece, inde,
+  indonesie, irlande, israel, italie, jamaique, japon, laos, liban, madagascar,
+  malaisie, maroc, mexique, nouvelle-zelande, pays-bas, perou, philippines,
+  portugal, reunion, senegal, singapour, sri-lanka, suisse, syrie, tahiti,
+  thailande, tunisie, turquie, uk, vietnam.
+- **French regions (4):** dauphine, provence, savoie, vercors-region.
+- **Wine regions (15):** alsace, beaujolais, bordeaux, bourgogne, bugey,
+  champagne, corse, jura, languedoc, loire, provence, rhone, roussillon, savoie,
+  sud-ouest.
 
 ### Tokens & preview
 - `tokens.css` — all compiled CSS custom properties (colors, type, spacing, radius,
