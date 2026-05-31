@@ -1,5 +1,5 @@
 # HIBOUBOX Brand Design System
-> Category: Restaurant & Hospitality
+> Category: Creative & Artistic
 > Restaurant-concert-bar au Vercors. Palette ink/cream/orange, grammaire cartographie+jazz+passeport.
 
 This is the portable Open Design package for **HIBOUBOX** — a restaurant /
