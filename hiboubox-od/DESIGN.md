@@ -87,6 +87,25 @@ filigree/sub-brand accent. Olive is a rarely-used backup.
 OKLch values are approximate. Contrast ratios are WCAG 2.2 (AA = 4.5:1 normal
 text, 3:1 large text ≥18px or ≥14px bold), computed by the official formula.
 
+### Core role bindings (drives the live preview)
+
+The canonical role → value mapping. These `Label: #hex` lines are the
+machine-readable bindings the OD showcase parses to render the live preview in
+brand; the full token reference follows in the tables below.
+
+- Primary background: #16140f
+- Secondary surface: #211e19
+- Card surface: #2d2925
+- Primary text: #faf3e2
+- Body text: #f0e6ce
+- Secondary text: #c2b39a
+- Border: #3a3530
+- Brand primary: #d97a2a
+- Brand secondary: #d4af5a
+- Display font: "Bungee", "Bowlby One", "Arial Black", sans-serif
+- Body font: "Lato", "Source Sans 3", system-ui, sans-serif
+- Mono font: "Special Elite", "Courier Prime", "Courier New", monospace
+
 ### Ink — dark backgrounds (warm taupe, never brown-red, never cold grey)
 | Token        | Hex       | OKLch approx.          | Role / contrast                                      |
 |--------------|-----------|------------------------|------------------------------------------------------|
