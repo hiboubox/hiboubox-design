@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HIBOUBOX — reference components</title>
-    <meta name="description" content="Reference fixture for design-systems/hiboubox: restaurant-concert-bar at Vercors, deep ink × brass orange × parchment cream, cartography + jazz + passport grammar." />
+    <meta name="description" content="Reference fixture for design-systems/hiboubox: restaurant-concert-bar at Vercors. Deep ink × brass orange × parchment cream, cartography + jazz + passport grammar." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Lato:wght@400;500;700&family=Barlow+Condensed:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet" />
@@ -23,18 +23,17 @@
         --font-body: "Lato", system-ui, sans-serif;
         --font-label: "Barlow Condensed", "Arial Narrow", sans-serif;
         --font-mono: "Special Elite", "Courier New", monospace;
-        --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 20px;
+        --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-md: 18px; --text-lg: 20px;
         --text-xl: 28px; --text-2xl: 44px; --text-3xl: 64px; --text-4xl: 92px;
         --leading-body: 1.55; --leading-tight: 1.05; --leading-display: 0.9;
         --tracking-display: -0.01em; --tracking-eyebrow: 0.22em;
         --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
         --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
-        --section-y-desktop: 96px; --section-y-tablet: 72px; --section-y-phone: 56px;
+        --section-y: 88px; --section-y-phone: 56px;
         --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-pill: 9999px;
-        --elev-ring: 0 0 0 1px var(--border);
         --elev-raised: 0 6px 24px rgba(0,0,0,.55);
         --focus-ring: 0 0 0 3px rgba(234,147,74,.45);
-        --motion-fast: 150ms; --motion-base: 200ms; --ease: cubic-bezier(0.2,0,0,1);
+        --motion-fast: 150ms; --ease: cubic-bezier(0.2,0,0,1);
         --container-max: 1280px; --gutter: 64px;
       }
       *, *::before, *::after { box-sizing: border-box; }
@@ -46,117 +45,179 @@
         background-image: radial-gradient(rgba(245,236,214,.025) 1px, transparent 1px);
         background-size: 26px 26px;
       }
-      .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--gutter); }
-      section { padding-block: var(--section-y-desktop); position: relative; overflow: hidden; }
-      section + section { border-top: 1px dashed var(--dashed-soft); }
-      h1, h2, h3, p { margin: 0; }
-      .display {
-        font-family: var(--font-display); text-transform: uppercase;
-        line-height: var(--leading-display); letter-spacing: var(--tracking-display); color: var(--fg);
-      }
+      .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--gutter); position: relative; }
+      .narrow { max-width: 980px; }
+      section { padding-block: var(--section-y); position: relative; overflow: hidden; }
+      .alt { background: var(--surface); }
+      h1, h2, h3, p, ul { margin: 0; }
+      ul { padding: 0; list-style: none; }
+
+      /* ── Typographic primitives ── */
+      .display { font-family: var(--font-display); text-transform: uppercase; line-height: var(--leading-display);
+        letter-spacing: var(--tracking-display); color: var(--fg); }
       h1.display { font-size: var(--text-4xl); max-width: 12ch; }
       h2.display { font-size: var(--text-2xl); line-height: var(--leading-tight); }
-      .display .accent { color: var(--accent); }
-      .display .gold { color: var(--gold); }
-      .eyebrow {
-        font-family: var(--font-label); font-weight: 700; font-size: var(--text-sm);
-        letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--meta);
-      }
+      h3.display { font-size: var(--text-xl); line-height: var(--leading-tight); text-transform: none; }
+      .display .accent { color: var(--accent); } .display .gold { color: var(--gold); }
+      .eyebrow { font-family: var(--font-label); font-weight: 700; font-size: var(--text-sm);
+        letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--meta); }
       .eyebrow.gold { color: var(--gold); }
       .script { font-family: var(--font-serif); font-style: italic; font-weight: 500; color: var(--fg-2); }
-      .coord {
-        display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono);
+      .mono { font-family: var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+      .coord { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono);
         font-size: var(--text-sm); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
-        padding: 4px 12px; border: 1px dashed var(--dashed); border-radius: var(--radius-pill);
-      }
+        padding: 4px 12px; border: 1px dashed var(--dashed); border-radius: var(--radius-pill); }
       .lead { max-width: 56ch; color: var(--fg-2); font-size: var(--text-lg); }
       .muted { color: var(--muted); font-size: var(--text-sm); }
+      .num { font-variant-numeric: tabular-nums; }
       .stack > * + * { margin-block-start: var(--space-4); }
       .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block-start: var(--space-6); }
+      .sec-head { margin-bottom: var(--space-8); }
+      .sec-head h2 { margin-top: 8px; }
 
       /* ── Buttons ── */
-      .btn {
-        display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 var(--space-6);
+      .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 var(--space-6);
         border: 1.5px solid transparent; border-radius: var(--radius-pill); cursor: pointer;
         font-family: var(--font-label); font-weight: 700; font-size: var(--text-sm);
         letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
         transition: background-color var(--motion-fast) var(--ease), border-color var(--motion-fast) var(--ease),
-                    color var(--motion-fast) var(--ease), transform var(--motion-fast) var(--ease);
-      }
+                    color var(--motion-fast) var(--ease), transform var(--motion-fast) var(--ease); }
       .btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
       .btn-primary { background: var(--accent); color: var(--accent-on); border-color: var(--accent); }
       .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); transform: scale(1.02); }
       .btn-primary:active { background: var(--accent-active); border-color: var(--accent-active); }
       .btn-outline { background: transparent; color: var(--accent); border-color: var(--accent); }
       .btn-outline:hover { background: rgba(217,122,42,.10); border-color: var(--accent-hover); color: var(--accent-hover); }
+      .btn-ghost { background: transparent; color: var(--fg); border: 1px dashed rgba(250,243,226,.4); }
+      .btn-ghost:hover { background: rgba(250,243,226,.06); }
       .btn-gold { background: var(--gold); color: var(--accent-on); border-color: var(--gold); }
       .btn-gold:hover { background: var(--gold-hover); border-color: var(--gold-hover); transform: scale(1.02); }
       .btn[disabled] { background: #6a4824; border-color: #6a4824; color: var(--muted); cursor: not-allowed; opacity: .8; }
-      .btn-full { width: 100%; justify-content: center; min-height: 52px; font-size: var(--text-md, 18px); }
+      .btn-full { width: 100%; justify-content: center; min-height: 52px; font-size: var(--text-md); }
 
-      /* ── Card + "official postal stamp" frame ── */
-      .hero { display: grid; grid-template-columns: minmax(0,1.18fr) minmax(320px,1fr); gap: var(--space-8); align-items: start; }
-      .panel {
-        position: relative; background: var(--surface-warm); border: 1px solid rgba(217,122,42,.18);
-        border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--elev-raised);
-      }
+      /* ── Frames / cards / stamp grammar ── */
+      .panel { position: relative; background: var(--surface-warm); border: 1px solid rgba(217,122,42,.18);
+        border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--elev-raised); }
       .stampframe { border: 1.5px solid var(--accent); outline: 1px dashed var(--dashed); outline-offset: 4px; }
-      .stampframe::before, .stampframe::after {
-        content: ""; position: absolute; width: 12px; height: 12px; border: 1.2px dashed var(--accent);
-      }
+      .stampframe.gold { border-color: var(--gold); outline-color: rgba(212,175,90,.55); }
+      .stampframe::before, .stampframe::after { content: ""; position: absolute; width: 12px; height: 12px; border: 1.2px dashed var(--accent); }
       .stampframe::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
       .stampframe::after { bottom: 6px; right: 6px; border-left: none; border-top: none; }
       .featured { animation: halo 4.8s ease-in-out infinite; }
-      @keyframes halo {
-        0%,100% { box-shadow: inset 0 0 0 1px rgba(217,122,42,.28); }
-        50% { box-shadow: inset 0 0 0 1px rgba(217,122,42,.42), 0 0 28px rgba(217,122,42,.18); }
-      }
-      .panel-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+      @keyframes halo { 0%,100% { box-shadow: inset 0 0 0 1px rgba(217,122,42,.28); }
+        50% { box-shadow: inset 0 0 0 1px rgba(217,122,42,.42), 0 0 28px rgba(217,122,42,.18); } }
+      .panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4);
         padding-bottom: var(--space-4); margin-bottom: var(--space-5); border-bottom: 1px dashed var(--dashed-soft); }
-      .datetime {
-        position: relative; margin: var(--space-5) 0; padding: var(--space-5);
-        text-align: center; background: var(--ink-1000); border-radius: var(--radius-sm);
-      }
+      .stamp-pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--accent); padding: 4px 9px; border: 1px solid var(--accent);
+        border-radius: var(--radius-sm); background: rgba(245,176,116,.05); transform: rotate(-4deg); white-space: nowrap; }
+      .datetime { position: relative; margin: var(--space-5) 0; padding: var(--space-5); text-align: center;
+        background: var(--ink-1000); border-radius: var(--radius-sm); }
       .datetime .d { font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0.16em; color: var(--accent); }
       .datetime .t { font-family: var(--font-display); font-size: var(--text-xl); color: var(--fg); margin-top: 6px; }
-      .stamp-pill {
-        display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
-        text-transform: uppercase; color: var(--accent); padding: 4px 9px;
-        border: 1px solid var(--accent); border-radius: var(--radius-sm);
-        background: rgba(245,176,116,.05); transform: rotate(-4deg);
-      }
 
-      /* ── Swatches + token specimens ── */
+      /* ── Hero ── */
+      .hero { display: grid; grid-template-columns: minmax(0,1.18fr) minmax(320px,1fr); gap: var(--space-8); align-items: start; }
+      .miniband { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--space-3); margin-top: var(--space-8); }
+      .cell { padding: var(--space-4); border: 1px dashed var(--dashed-soft); border-radius: var(--radius-sm); text-align: center; }
+      .cell .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; }
+      .cell .v { color: var(--fg); font-size: var(--text-sm); margin-top: 6px; }
+
+      /* ── Boarding-pass timeline ── */
+      .timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--space-4); }
+      .step { position: relative; padding: var(--space-5); border: 1px dashed var(--dashed-soft); border-radius: var(--radius-sm); background: var(--ink-1000); }
+      .step .no { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--accent);
+        border: 1px dashed var(--dashed); border-radius: 3px; padding: 2px 6px; display: inline-block; }
+      .step .time { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--accent); margin: 12px 0 6px; letter-spacing: .12em; }
+      .step .title { font-family: var(--font-label); font-weight: 700; font-size: var(--text-md); text-transform: uppercase; letter-spacing: .08em; color: var(--fg); }
+      .step .desc { color: var(--muted); font-size: 13px; margin-top: 8px; }
+      .step.hi { border-style: solid; border-color: var(--accent); }
+      .step.hi .star { position: absolute; top: 14px; right: 14px; color: var(--accent); }
+
+      /* ── Menu list ── */
+      .menu { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8) var(--space-12); }
+      .menu-col { position: relative; }
+      .menu-cat { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px dashed var(--dashed-soft); }
+      .menu-cat .ico { width: 34px; height: 34px; color: var(--accent); flex: none; }
+      .menu-cat .lbl { font-family: var(--font-label); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--accent); font-size: var(--text-md); }
+      .menu-item { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; }
+      .menu-item .name { color: var(--fg); font-weight: 500; }
+      .menu-item .dots { flex: 1; border-bottom: 1px dotted rgba(245,236,214,.25); transform: translateY(-4px); }
+      .menu-item .price { font-family: var(--font-mono); color: var(--accent); letter-spacing: .06em; }
+      .menu-item .desc { color: var(--muted); font-size: 13px; }
+      .origin-wm { position: absolute; top: -8px; right: 0; width: 150px; opacity: .5; color: var(--gold); transform: rotate(-9deg); pointer-events: none; }
+
+      /* ── Info Pratiques card ── */
+      .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: stretch; }
+      .info-row { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--dashed-soft); }
+      .info-row .k { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; color: var(--accent); text-transform: uppercase; }
+      .info-row .v { color: var(--fg-2); font-size: var(--text-sm); text-align: right; }
+      .addr { padding: var(--space-5); border: 1px dashed var(--dashed); border-radius: var(--radius-sm); margin: var(--space-4) 0; }
+      .addr .street { font-family: var(--font-serif); font-style: italic; font-size: var(--text-xl); color: var(--fg); }
+      .map { position: relative; min-height: 260px; border-radius: var(--radius-lg); background:
+        repeating-linear-gradient(0deg, transparent 0 28px, rgba(217,122,42,.10) 28px 29px),
+        repeating-linear-gradient(90deg, transparent 0 28px, rgba(217,122,42,.10) 28px 29px), var(--ink-1000);
+        display: grid; place-items: center; }
+      .map .pin { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px rgba(217,122,42,.25); }
+
+      /* ── Badges / chips / semantic ── */
+      .row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+      .badge { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+        border: 1px dashed var(--dashed); border-radius: var(--radius-sm); padding: 4px 8px; }
+      .chip { font-family: var(--font-label); font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+        color: var(--fg-2); background: var(--surface-warm); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 8px 16px; }
+      .chip.on { background: rgba(217,122,42,.12); border-color: var(--accent); color: var(--accent); }
+      .sem { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-label); font-weight: 700;
+        font-size: 13px; letter-spacing: .1em; text-transform: uppercase; padding: 8px 14px; border-radius: var(--radius-sm); }
+      .sem::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+      .sem-ok { color: var(--success); background: #2a3318; }
+      .sem-wn { color: var(--warn); background: rgba(212,161,58,.12); }
+      .sem-dn { color: var(--danger); background: #3a1612; }
+
+      /* ── Swatches / specimen ── */
       .lower { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-4); }
-      .tile { padding: var(--space-6); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); }
+      .tile { padding: var(--space-6); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-warm); }
       .swatches { display: flex; gap: var(--space-2); margin-block-start: var(--space-4); }
       .sw { width: 40px; height: 40px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
       .sw-ink { background: var(--bg); } .sw-surface { background: var(--surface-warm); }
       .sw-cream { background: var(--fg); } .sw-accent { background: var(--accent); } .sw-gold { background: var(--gold); }
       .specimen { font-family: var(--font-display); color: var(--fg); line-height: .9; }
+      .scale { display: grid; gap: 6px; margin-top: 12px; }
+      .scale span { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+
+      /* ── Newsletter signature strip ── */
+      .news { position: relative; padding: var(--space-8); display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-8); align-items: center; }
+      .news-form { display: flex; gap: var(--space-3); }
+      input { flex: 1; min-height: 52px; padding: 0 var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-pill);
+        background: var(--ink-1000); color: var(--fg); font: inherit; }
+      input:focus { outline: none; box-shadow: var(--focus-ring); border-color: var(--accent); }
+      .guarantees { margin-top: var(--space-5); display: flex; flex-wrap: wrap; gap: 16px; }
+      .guarantees span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
 
       /* ── Atmosphere decor ── */
-      .compass { position: absolute; top: 36px; right: 40px; width: 110px; height: 110px; opacity: .28; pointer-events: none; }
-      .cartouche {
-        position: absolute; bottom: 24px; right: var(--gutter); font-family: var(--font-mono);
-        font-size: 11px; letter-spacing: 0.14em; color: var(--muted); opacity: .7; transform: rotate(-2deg); text-align: right;
-      }
-      .grid-deco { position: absolute; inset: 0; opacity: .06; pointer-events: none;
+      .compass { position: absolute; top: 32px; right: 40px; width: 108px; height: 108px; opacity: .26; pointer-events: none; }
+      .staff { position: absolute; left: 0; right: 0; bottom: 28px; height: 70px; opacity: .22; pointer-events: none; }
+      .cartouche { position: absolute; bottom: 22px; right: var(--gutter); font-family: var(--font-mono); font-size: 11px;
+        letter-spacing: .14em; color: var(--muted); opacity: .7; transform: rotate(-2deg); text-align: right; }
+      .grid-deco { position: absolute; inset: 0; opacity: .05; pointer-events: none;
         background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px);
         background-size: 64px 64px; }
-      @media (max-width: 860px) {
+      .wave { display: block; width: 100%; height: 60px; }
+
+      @media (max-width: 900px) {
         :root { --gutter: 24px; }
         section { padding-block: var(--section-y-phone); }
-        .hero, .lower { grid-template-columns: 1fr; }
-        h1.display { font-size: 48px; line-height: 1.12; }
-        .compass { display: none; }
+        .hero, .lower, .menu, .info-grid, .news, .miniband, .timeline { grid-template-columns: 1fr; }
+        .timeline { grid-template-columns: 1fr 1fr; }
+        h1.display { font-size: 46px; line-height: 1.12; }
+        .compass, .staff { display: none; }
       }
       @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
     </style>
   </head>
   <body>
     <main>
-      <!-- HERO -->
+      <!-- ════ HERO ════ -->
       <section>
         <div class="grid-deco"></div>
         <svg class="compass" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#d97a2a" stroke-width="1.2">
@@ -168,7 +229,7 @@
         <div class="container hero">
           <div class="stack">
             <span class="coord">◉ 45°04′N · 5°33′E · VILLARD-DE-LANS</span>
-            <p class="eyebrow">◉ MMXXVI · RESTAURANT-CONCERT-BAR</p>
+            <p class="eyebrow">◉ MMXXVI · RESTAURANT-CONCERT-BAR-GALERIE</p>
             <h1 class="display">LE <span class="accent">HIBOUBOX</span></h1>
             <p class="script" style="font-size: var(--text-xl)">« le voyage commence à table »</p>
             <p class="lead">Cuisine internationale faite maison, fumaisons artisanales, et une scène vivante cinq à six soirs par semaine au cœur du Vercors.</p>
@@ -177,8 +238,6 @@
               <a class="btn btn-outline" href="#">→ Programmation</a>
             </div>
           </div>
-
-          <!-- Featured concert card -->
           <article class="panel stampframe featured" aria-label="Concert à la une">
             <div class="panel-head">
               <div>
@@ -190,43 +249,155 @@
             <p class="script" style="font-size:var(--text-lg)">guitare · contrebasse · violon</p>
             <div class="datetime stampframe">
               <div class="d">VEN 17 MAI</div>
-              <div class="t">20H30 → 22H30</div>
-              <div class="muted" style="margin-top:8px; font-family:var(--font-mono); letter-spacing:.1em">◉ DEUX SETS · ENTRÉE LIBRE · PRIX LIBRE</div>
+              <div class="t num">20H30 → 22H30</div>
+              <div class="muted mono" style="margin-top:8px; font-size:11px">◉ DEUX SETS · ENTRÉE LIBRE · PRIX LIBRE</div>
             </div>
             <a class="btn btn-primary btn-full" href="#">→ Détails du concert</a>
           </article>
         </div>
+        <div class="container">
+          <div class="miniband">
+            <div class="cell"><div class="k">Lieu</div><div class="v">41 rue des Pionniers</div></div>
+            <div class="cell"><div class="k">Entrée</div><div class="v">Libre · prix libre</div></div>
+            <div class="cell"><div class="k">Tél</div><div class="v num">04 56 00 09 56</div></div>
+            <div class="cell"><div class="k">Service</div><div class="v">Mar → Dim · 18-22h</div></div>
+          </div>
+        </div>
         <span class="cartouche">CARTA Nº I · DOMUS NOSTRA<br/>HIBOUBOX · ÉD. MMXXVI</span>
       </section>
 
-      <!-- TOKENS / PRIMITIVES -->
-      <section style="background: var(--surface)">
+      <svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 30 Q 320 0 640 30 T 1280 30 V60 H0 Z" fill="#211e19" />
+        <path d="M0 30 Q 320 0 640 30 T 1280 30" fill="none" stroke="#d97a2a" stroke-width="1.4" stroke-dasharray="6 7" opacity=".55" />
+      </svg>
+
+      <!-- ════ PROGRAMMATION · boarding-pass timeline ════ -->
+      <section class="alt">
+        <svg class="staff" viewBox="0 0 1280 70" preserveAspectRatio="none" aria-hidden="true" stroke="#d97a2a" stroke-width="1" stroke-dasharray="4 4" opacity=".7">
+          <line x1="0" y1="10" x2="1280" y2="10"/><line x1="0" y1="25" x2="1280" y2="25"/><line x1="0" y1="40" x2="1280" y2="40"/><line x1="0" y1="55" x2="1280" y2="55"/>
+          <text x="20" y="50" font-size="56" fill="#d97a2a" stroke="none" font-family="serif">𝄞</text>
+        </svg>
         <div class="container">
-          <p class="eyebrow">◉ Système</p>
-          <h2 class="display" style="margin:8px 0 var(--space-8)">JETONS &amp; <span class="accent">PRIMITIVES</span></h2>
+          <div class="sec-head">
+            <p class="eyebrow">◉ Le déroulé d'une soirée</p>
+            <h2 class="display">PORTÉE · <span class="accent">NAVIGATION</span></h2>
+          </div>
+          <div class="timeline">
+            <div class="step"><span class="no">01</span><div class="time num">▴ 18H00</div><div class="title">Ouverture du service</div><p class="desc">Service à table dès 18h, accueil exclusivement assis.</p></div>
+            <div class="step hi"><span class="no">02</span><span class="star">✸</span><div class="time num">▴ 20H30</div><div class="title">Premier set</div><p class="desc">30-40 min, acoustique, sous éclairage de scène.</p></div>
+            <div class="step"><span class="no">03</span><div class="time num">▴ 21H10</div><div class="title">Entracte bar</div><p class="desc">Pause et ouverture du bar, exclusivement à table.</p></div>
+            <div class="step"><span class="no">04</span><div class="time num">▴ 21H30</div><div class="title">Second set</div><p class="desc">Rappels usuels, fin de service vers 22h30.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ MENU · line-art icons + prix + origin watermark ════ -->
+      <section>
+        <div class="container">
+          <div class="sec-head">
+            <p class="eyebrow">◉ Carte sans frontières</p>
+            <h2 class="display">TERRA · <span class="accent">GASTRONOMICA</span></h2>
+          </div>
+          <div class="menu">
+            <div class="menu-col">
+              <svg class="origin-wm" viewBox="0 0 140 80" aria-hidden="true" fill="none" stroke="currentColor">
+                <ellipse cx="70" cy="40" rx="66" ry="36" stroke-width="1.4"/><ellipse cx="70" cy="40" rx="60" ry="30" stroke-width=".7" stroke-dasharray="2 2.4" opacity=".55"/>
+                <rect x="34" y="24" width="72" height="15" stroke-width=".9" stroke-dasharray="2.6 2"/>
+                <text x="70" y="35" text-anchor="middle" font-family="monospace" font-size="11" fill="currentColor" stroke="none" font-weight="700">THAÏLANDE</text>
+                <path d="M58 52 q12 -8 24 0" stroke-width="1.2"/><circle cx="70" cy="58" r="3" stroke-width="1.2"/>
+              </svg>
+              <div class="menu-cat">
+                <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 14 h24 a12 12 0 0 1 -24 0 Z"/><path d="M16 14 v-5"/><path d="M11 9 q5 -4 10 0" opacity=".6"/><path d="M7 26 l4 -6 M25 26 l-4 -6" opacity=".6"/>
+                </svg>
+                <span class="lbl">Woks</span>
+              </div>
+              <ul>
+                <li class="menu-item"><span class="name">Wok bœuf basilic thaï</span><span class="dots"></span><span class="price num">16,00 €</span></li>
+                <li class="menu-item"><span class="name">Pad thaï crevettes</span><span class="dots"></span><span class="price num">17,50 €</span></li>
+                <li class="menu-item"><span class="name">Wok légumes &amp; tofu fumé</span><span class="dots"></span><span class="price num">14,00 €</span></li>
+              </ul>
+            </div>
+            <div class="menu-col">
+              <div class="menu-cat">
+                <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 15 a11 7 0 0 0 22 0 Z"/><path d="M16 15 v-4"/><path d="M16 11 q-3 -3 0 -5 q3 2 0 5" opacity=".6"/><circle cx="11" cy="19" r="1" opacity=".6"/><circle cx="21" cy="19" r="1" opacity=".6"/>
+                </svg>
+                <span class="lbl">Currys</span>
+              </div>
+              <ul>
+                <li class="menu-item"><span class="name">Curry massaman agneau</span><span class="dots"></span><span class="price num">18,00 €</span></li>
+                <li class="menu-item"><span class="name">Curry vert poulet</span><span class="dots"></span><span class="price num">16,00 €</span></li>
+                <li class="menu-item"><span class="name">Dahl de lentilles corail</span><span class="dots"></span><span class="price num">13,50 €</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <svg class="wave" viewBox="0 0 1280 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 30 Q 320 60 640 30 T 1280 30 V60 H0 Z" fill="#211e19" />
+        <path d="M0 30 Q 320 60 640 30 T 1280 30" fill="none" stroke="#d97a2a" stroke-width="1.4" stroke-dasharray="6 7" opacity=".55" />
+      </svg>
+
+      <!-- ════ INFOS PRATIQUES + carte ════ -->
+      <section class="alt">
+        <div class="container narrow">
+          <div class="sec-head">
+            <p class="eyebrow">◉ Se rendre à HIBOUBOX</p>
+            <h2 class="display">PORTUS · <span class="accent">DOMUS</span></h2>
+          </div>
+          <div class="info-grid">
+            <article class="panel stampframe">
+              <div class="addr">
+                <div class="street">41 rue des Pionniers</div>
+                <div class="muted">38250 · Villard-de-Lans</div>
+                <div class="mono" style="color:var(--accent); font-size:13px; margin-top:6px">◉ 45°04′N · 5°33′E · ALT 1050 M</div>
+              </div>
+              <div class="info-row"><span class="k">Horaires</span><span class="v">Mar → Dim · 18-22h</span></div>
+              <div class="info-row"><span class="k">Concerts</span><span class="v">20h30 · entrée libre</span></div>
+              <div class="info-row"><span class="k">Happy hour</span><span class="v">16h → 18h · -20%</span></div>
+              <div class="info-row"><span class="k">Email</span><span class="v">contact@hiboubox.fr</span></div>
+              <div class="actions" style="margin-top:var(--space-5)">
+                <a class="btn btn-primary" href="#">→ Réserver</a>
+                <a class="btn btn-ghost" href="#">☎ 04 56 00 09 56</a>
+              </div>
+            </article>
+            <div class="map" aria-label="Carte localisation"><span class="pin"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ TOKENS / PRIMITIVES ════ -->
+      <section>
+        <div class="container">
+          <div class="sec-head">
+            <p class="eyebrow">◉ Système</p>
+            <h2 class="display">JETONS &amp; <span class="accent">PRIMITIVES</span></h2>
+          </div>
           <div class="lower">
             <article class="tile">
               <p class="eyebrow" style="font-size:13px">Palette</p>
-              <h3 class="display" style="font-size:var(--text-xl); margin-top:8px">Ink · Cream · Orange</h3>
-              <p class="muted" style="margin-top:10px">Fond ink profond, texte cream parchemin, accent orange laiton unique. Gold réservé aux origines et au Festin.</p>
+              <h3 class="display" style="margin-top:8px">Ink · Cream · Orange</h3>
+              <p class="muted" style="margin-top:10px">Fond ink profond, texte cream parchemin, accent orange unique. Gold réservé origines &amp; Festin.</p>
               <div class="swatches" aria-label="Token swatches">
-                <span class="sw sw-ink" title="--bg ink-900"></span>
-                <span class="sw sw-surface" title="--surface-warm ink-700"></span>
-                <span class="sw sw-cream" title="--fg cream-50"></span>
-                <span class="sw sw-accent" title="--accent orange-500"></span>
-                <span class="sw sw-gold" title="gold-400"></span>
+                <span class="sw sw-ink" title="--bg"></span><span class="sw sw-surface" title="--surface-warm"></span>
+                <span class="sw sw-cream" title="--fg"></span><span class="sw sw-accent" title="--accent"></span><span class="sw sw-gold" title="gold"></span>
               </div>
             </article>
             <article class="tile">
               <p class="eyebrow" style="font-size:13px">Typographie</p>
-              <h3 class="display" style="font-size:var(--text-xl); margin-top:8px">Bungee + Lato</h3>
-              <p class="specimen" style="font-size:48px; margin-top:12px">HIBOU</p>
-              <p class="script" style="font-size:var(--text-xl); margin-top:8px">Cormorant italique</p>
-              <p class="muted" style="font-family:var(--font-mono); letter-spacing:.12em; margin-top:8px">SPECIAL ELITE · 45°04′N</p>
+              <h3 class="display" style="margin-top:8px">6 familles</h3>
+              <p class="specimen" style="font-size:44px; margin-top:12px">HIBOU</p>
+              <div class="scale">
+                <span style="font-family:var(--font-serif); font-style:italic; color:var(--fg-2); font-size:18px">Cormorant — script italique</span>
+                <span>BARLOW CONDENSED · EYEBROW 0.22em</span>
+                <span>SPECIAL ELITE · 45°04′N · 12,00 €</span>
+              </div>
             </article>
             <article class="tile">
-              <p class="eyebrow" style="font-size:13px">Boutons</p>
-              <h3 class="display" style="font-size:var(--text-xl); margin:8px 0 14px">États</h3>
+              <p class="eyebrow" style="font-size:13px">Boutons &amp; états</p>
+              <h3 class="display" style="margin:8px 0 14px">Actions</h3>
               <div class="stack">
                 <a class="btn btn-primary" href="#">→ Primary</a>
                 <a class="btn btn-outline" href="#">→ Outline</a>
@@ -235,22 +406,56 @@
               </div>
             </article>
           </div>
+
+          <!-- badges / chips / semantic -->
+          <div style="margin-top:var(--space-8); display:grid; gap:var(--space-6)">
+            <div class="row"><span class="muted mono" style="font-size:11px; min-width:120px">BADGES</span>
+              <span class="badge">FICHE Nº 04</span><span class="badge">◉ NOUVEAU</span><span class="badge">↗ EXPÉDIÉ</span><span class="stamp-pill">◉ ENTRÉE LIBRE</span></div>
+            <div class="row"><span class="muted mono" style="font-size:11px; min-width:120px">CHIPS · FILTRES</span>
+              <span class="chip on">Jazz manouche</span><span class="chip">Blues</span><span class="chip">Chanson FR</span><span class="chip">Musiques du monde</span></div>
+            <div class="row"><span class="muted mono" style="font-size:11px; min-width:120px">SÉMANTIQUE</span>
+              <span class="sem sem-ok">Confirmé</span><span class="sem sem-wn">En attente</span><span class="sem sem-dn">Complet</span></div>
+          </div>
         </div>
       </section>
 
-      <!-- FESTIN DU HIBOU (gold variant) -->
+      <!-- ════ NEWSLETTER signature strip ════ -->
+      <section class="alt">
+        <div class="container">
+          <div class="news panel stampframe">
+            <div>
+              <span class="stamp-pill" style="position:absolute; top:-14px; left:24px">Nº III · MENSUEL</span>
+              <h2 class="display" style="font-size:var(--text-xl)">UNE FOIS PAR MOIS, <span class="accent">RIEN DE PLUS</span>.</h2>
+              <p class="muted" style="margin-top:10px">L'agenda à venir, une expo, un mot de la maison. Pas de spam.</p>
+            </div>
+            <form class="news-form" onsubmit="return false">
+              <input type="email" placeholder="votre@email.fr" aria-label="Email" />
+              <button class="btn btn-primary" type="submit">→ OK</button>
+            </form>
+          </div>
+          <div class="guarantees">
+            <span>◉ PAS DE SPAM</span><span>◉ DÉSINSCRIPTION 1 CLIC</span><span>◉ DONNÉES NON CÉDÉES</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ FESTIN DU HIBOU (gold variant) ════ -->
       <section>
         <div class="grid-deco"></div>
-        <div class="container">
-          <article class="panel stampframe" style="border-color:var(--gold); outline-color:rgba(212,175,90,.55); max-width:920px; margin-inline:auto; text-align:center">
+        <div class="container narrow">
+          <article class="panel stampframe gold" style="text-align:center">
             <p class="eyebrow gold">◉ Notre branche traiteur</p>
             <h2 class="display" style="margin:10px 0">LE <span class="gold">FESTIN</span> DU HIBOU</h2>
             <p class="script" style="font-size:var(--text-lg); color:var(--gold)">« notre cuisine se déplace chez vous »</p>
             <p class="muted" style="max-width:54ch; margin:16px auto 24px">Variation chromatique de la grammaire HIBOUBOX : accent gold, atmosphères atelier &amp; apothicaire. Différenciateur clé — animation musicale via le réseau d'artistes.</p>
+            <div class="row" style="justify-content:center; margin-bottom:20px">
+              <span class="badge" style="color:var(--gold); border-color:rgba(212,175,90,.55)">◉ Vercors · Isère</span>
+              <span class="badge" style="color:var(--gold); border-color:rgba(212,175,90,.55)">◯ Devis sur mesure</span>
+            </div>
             <a class="btn btn-gold" href="#">→ Demander un devis</a>
           </article>
         </div>
-        <span class="cartouche" style="color:var(--gold)">FESTIN Nº I · VIA · COQUINA</span>
+        <span class="cartouche" style="color:var(--gold)">FESTIN Nº V · VIA · COQUINA</span>
       </section>
     </main>
   </body>
