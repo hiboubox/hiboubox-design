@@ -1,0 +1,238 @@
+/* ============================================================
+   HIBOUBOX Design Tokens — Open Design
+   Source: hiboubox/hiboubox-design (DESIGN.md, brand-showcase.html)
+   Restaurant-concert-bar-galerie · Villard-de-Lans, Vercors
+   Palette: ink profond × orange laiton × cream parchemin × or filigrane
+   ------------------------------------------------------------
+   Values reconciled against the WCAG-verified tables in DESIGN.md
+   (the canonical source of truth). All token names map 1:1 to the
+   `colors:` / `typography:` / `spacing:` blocks of DESIGN.md.
+   ============================================================ */
+
+:root {
+
+  /* ====================================================
+     INK SCALE — warm taupe / dark grey backgrounds (never cold)
+     ==================================================== */
+  --ink-1000: #0a0908; /* deepest — full bleed, footer, modal/drawer bg     */
+  --ink-900:  #16140f; /* page background default — base of all UI          */
+  --ink-800:  #211e19; /* raised surface, sticky header, alternated section */
+  --ink-700:  #2d2925; /* card surface on dark, hover state                 */
+  --ink-600:  #3a3530; /* hover surface, strong borders                     */
+  --ink-500:  #4a4540; /* divider, muted border                            */
+
+  /* ====================================================
+     CREAM — light text on ink + parchment print surfaces
+     ==================================================== */
+  --cream-50:  #faf3e2; /* primary text on ink — display, titles, hero eyebrow */
+  --cream-100: #f0e6ce; /* body text on ink (default <body>)                   */
+  --warm-300:  #c2b39a; /* secondary muted text, captions, sub-lines (9.0:1)   */
+  --warm-500:  #897a63; /* DISABLED ONLY — WCAG-exempt (4.4:1, never active txt)*/
+
+  /* PAPER — warm cream backgrounds for light/print supports */
+  --paper-100: #f5ecd6; /* primary print bg (menu, business card)          */
+  --paper-200: #e8dcc0; /* paper aged — print variation, card on paper bg  */
+  --paper-300: #d6c79e; /* paper darker / kraft — takeaway labels, packaging */
+
+  /* TEXT ON PAPER — 3-level hierarchy for light supports */
+  --on-paper-1: #1a1108; /* primary text on cream/paper (15.8:1 AAA)  */
+  --on-paper-2: #4a3422; /* secondary text on cream/paper (9.9:1 AAA) */
+  --on-paper-3: #7a5b3f; /* tertiary text / captions on paper (5.3:1 AA) */
+
+  /* ====================================================
+     ORANGE — the single brand accent (CTAs, links, eyebrows, stamps)
+     Rule: max 2 occurrences per screen.
+     ==================================================== */
+  --orange-300: #f5b074; /* hover soft, transient states              */
+  --orange-400: #ea934a; /* hover primary, eyebrows, focus ring (7.7:1 AAA) */
+  --orange-500: #d97a2a; /* PRIMARY accent — CTAs, ribbons, stamps, dividers (5.9:1 AA) */
+  --orange-600: #b35e1a; /* pressed / deep variant                    */
+  --orange-700: #7e3f10; /* darkest — orange on cream/paper (6.9:1 AA) */
+
+  /* ====================================================
+     GOLD — filigree accent (origin stamps + Le Festin du Hibou sub-brand)
+     ⚠ NOT a general UI accent. Orange-500 keeps that role.
+     ==================================================== */
+  --gold-400: #d4af5a; /* origin-stamp filigree · Festin CTAs/borders (8.8:1 AAA) */
+  --gold-500: #b88f3a; /* gold deep — Festin CTA hover                          */
+
+  /* ====================================================
+     OLIVE — vintage-poster ink, secondary CTA backup (rare in proto)
+     ==================================================== */
+  --olive-400: #a8b04a; /* hover state secondary                       */
+  --olive-500: #818825; /* secondary CTA — Btn.olive (alt to primary)  */
+  --olive-600: #5e6519; /* pressed olive                               */
+
+  /* ====================================================
+     SEMANTIC — system states (admin, forms, validation)
+     ==================================================== */
+  --success:    #6f8a3e; /* validation, accepted state (4.7:1 AA)              */
+  --success-bg: #2a3318; /* success card background                            */
+  --warning:    #d4a13a; /* non-blocking warning (7.9:1 AAA)                   */
+  --danger:     #d85535; /* error, rejected, delete (4.6:1 AA — fixed from #c14f2c FAIL) */
+  --danger-bg:  #3a1612; /* danger card background                             */
+  --info:       #6b8aa8; /* neutral info, muted blue never saturated (5.1:1 AA)*/
+
+  /* INTERACTION ALIASES (derived) */
+  --primary:           var(--orange-500);
+  --primary-hover:     var(--orange-400);
+  --primary-pressed:   var(--orange-600);
+  --primary-disabled:  #6a4824;
+  --primary-fg:        #1a0e04; /* text on orange (6.1:1 AA on orange-500)   */
+  --secondary:         var(--olive-500);
+  --secondary-hover:   var(--olive-400);
+  --secondary-pressed: var(--olive-600);
+  --secondary-fg:      #0f1404; /* text on olive (4.9:1 AA on olive-500)     */
+
+  /* ====================================================
+     TYPOGRAPHY — 6 families, strict exclusive roles
+     ==================================================== */
+  --font-display: "Bungee", "Bowlby One", "Ultra", "Arial Black", sans-serif;  /* XXL titles — uppercase only */
+  --font-poster:  "Rubik Wet Paint", "Bowlby One", "Arial Black", sans-serif;  /* concert poster XL only      */
+  --font-serif:   "Cormorant Garamond", "EB Garamond", Georgia, serif;         /* italic taglines/quotes only */
+  --font-body:    "Lato", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; /* body + UI */
+  --font-label:   "Barlow Condensed", "Oswald", "Arial Narrow", sans-serif;    /* eyebrows, labels, CTAs     */
+  --font-stamp:   "Special Elite", "Courier Prime", "Courier New", monospace;  /* stamps, coords, dates      */
+
+  /* TYPE SCALE — desktop sizes (see DESIGN.md §Typography for mobile bumps) */
+  --fs-display-xl: 92px; --lh-display-xl: 0.9;  --ls-display-xl: -0.01em;  /* hero principal     */
+  --fs-display-lg: 64px; --lh-display-lg: 0.92; --ls-display-lg: -0.005em; /* hero secondary     */
+  --fs-display-md: 44px; --lh-display-md: 1.05; --ls-display-md: -0.005em; /* section heads      */
+  --fs-poster-xl: 120px; --lh-poster-xl: 0.92;                              /* concert poster A3  */
+  --fs-script-lg:  60px; /* tagline hero — italic                          */
+  --fs-script-md:  34px; /* companion phrases — italic                     */
+  --fs-script-sm:  22px; /* discreet sub-titles — italic                   */
+  --fs-h3:         28px; --lh-h3: 1.05; /* card titles (textTransform: none) */
+  --fs-h4:         22px; --lh-h4: 1.2;  /* secondary card titles            */
+  --fs-lead:       20px; --lh-lead: 1.55; --fw-lead: 500;
+  --fs-body:       16px; --lh-body: 1.55; --fw-body: 400;
+  --fs-small:      14px; --lh-small: 1.55;
+  --fs-micro:      12px; --lh-micro: 1.45;
+  --fs-eyebrow-hero:    22px; /* hero eyebrow — Barlow 600                  */
+  --fs-eyebrow-section: 19px; /* section eyebrow — Barlow 600               */
+  --fs-eyebrow-card:    13px; /* card eyebrow — Barlow 600                  */
+  --fs-stamp:      10px; /* decorative stamps, ticket stubs, Nº numbering   */
+  --fs-coord:      13px; /* coord badges, cartographer ribbon              */
+  --ls-eyebrow: 0.22em;  /* eyebrow tracking — non-negotiable (≥0.16em)     */
+  --ls-stamp:   0.12em;
+  --ls-coord:   0.16em;
+  --fw-eyebrow: 600;
+  --fw-cta:     700;
+
+  /* ====================================================
+     SPACING — strict 4px base
+     ==================================================== */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+  --sec-pad-y-desktop: 100px; /* halved on mobile → ~56-64px */
+  --sec-pad-y-mobile:  56px;
+  --sec-pad-y-lg:      128px;  /* hero, long editorial → 80px mobile */
+  --content-pad-x:     clamp(20px, 4vw, 64px);
+
+  /* ====================================================
+     LAYOUT — containers & breakpoints
+     ==================================================== */
+  --container-max:    1280px; /* standard sections                 */
+  --container-narrow: 880px;  /* editorial (article, manifesto)    */
+  --editorial-col:    720px;  /* tight editorial column ~70 chars  */
+  --hit-target:       44px;   /* min touch target                  */
+  --artboard-desktop: 1440px;
+  --artboard-mobile:  390px;
+
+  /* ====================================================
+     RADIUS — franc angles preferred; radius only on pills/cards/blob
+     ==================================================== */
+  --r-none: 0;     /* eyebrows, dividers, sections      */
+  --r-xs:   2px;
+  --r-sm:   4px;   /* inputs, mini-badges               */
+  --r-md:   8px;   /* tooltips, mini-cards intra        */
+  --r-lg:   12px;  /* standard body cards               */
+  --r-xl:   20px;  /* spacious cards (rare)             */
+  --r-full: 999px; /* pills, chips, CTAs                */
+  --r-blob: 60% 40% 55% 45% / 50% 60% 40% 50%; /* owl silhouette mask */
+
+  /* ====================================================
+     BORDERS — orange/cream opacity levels
+     ==================================================== */
+  --border-thin:   1px;   /* standard everywhere               */
+  --border-medium: 1.5px; /* strong orange frames (festin)     */
+  --border-thick:  2px;   /* signature stamps, massive banners */
+  --border-stroke: 3px;   /* very heavy accents (rare)         */
+  --border-faint:        1px solid rgba(245,236,214,.08);
+  --border-soft:         1px solid rgba(245,236,214,.14);
+  --border-line:         1px solid rgba(245,236,214,.22);
+  --border-cream:        1px solid var(--paper-300);
+  --border-orange-soft:   1px dashed rgba(217,122,42,.35);
+  --border-orange-strong: 1.5px solid var(--orange-500);
+  --border-orange-gold:   1.5px solid var(--gold-400);
+  --dashed-orange-faint:  1px dashed rgba(217,122,42,.28);
+  --dashed-orange-medium: 1px dashed rgba(217,122,42,.55);
+  --dashed-orange-strong: 1.4px dashed var(--orange-500);
+
+  /* ====================================================
+     SHADOWS — warm only, never blurry blue soft-UI
+     ==================================================== */
+  --shadow-sm:   0 1px 2px rgba(0,0,0,.4);     /* very subtle (rare)        */
+  --shadow-md:   0 6px 24px rgba(0,0,0,.55);   /* modal, dropdown, popover  */
+  --shadow-lg:   0 24px 60px rgba(0,0,0,.7);   /* full-screen modal lift    */
+  --glow-orange: 0 0 40px rgba(217,122,42,.35);/* featured halo, CTA hover  */
+  --glow-stage:  inset 0 -30px 80px rgba(217,122,42,.25); /* "stage light" surfaces */
+  --shadow-featured: 0 0 0 1px rgba(217,122,42,.25), 0 0 28px 2px rgba(217,122,42,.18), 0 0 70px 12px rgba(217,122,42,.10);
+
+  /* ====================================================
+     MOTION — durations & easings (reduced-motion ALWAYS respected)
+     ==================================================== */
+  --dur-fade-in:    0.8s;
+  --dur-hover-link: 0.18s;
+  --dur-hover-card: 0.25s;
+  --dur-halo:       4.8s;  /* featured halo pulse                */
+  --dur-drawer:     0.32s;
+  --ease-default:   ease;
+  --ease-drawer:    cubic-bezier(0.35, 0, 0.25, 1);
+  --ease-halo:      ease-in-out;
+
+  /* ====================================================
+     FILTER CHAINS — recolor black SVG/PNG via filter (NEVER mask-image)
+     mask-image drops <text> in stamps/icons; filter preserves it.
+     ==================================================== */
+  --filter-orange-500: brightness(0) saturate(100%) invert(56%) sepia(73%) saturate(652%) hue-rotate(348deg) brightness(89%) contrast(89%);
+  --filter-gold-400:   brightness(0) saturate(100%) invert(73%) sepia(20%) saturate(852%) hue-rotate(2deg) brightness(91%) contrast(85%);
+  --filter-cream-60:   brightness(0) saturate(100%) invert(94%) sepia(11%) saturate(540%) hue-rotate(335deg) brightness(96%) contrast(89%);
+  /* Aliases matching brand-showcase.html naming */
+  --filter-orange: var(--filter-orange-500);
+  --filter-gold:   var(--filter-gold-400);
+  --filter-cream:  var(--filter-cream-60);
+  /* Stamp-logo default sepia-warm recolor (see DESIGN.md §Logos) */
+  --filter-stamp-sepia: invert(1) sepia(0.18) saturate(0.45) brightness(0.86) contrast(0.92) opacity(0.92);
+}
+
+/* ============================================================
+   FOCUS RING — WCAG 2.4.7 / 2.4.11 (AA). Use on all interactive elements.
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--orange-400); /* 7.7:1 on ink-900 */
+  outline-offset: 3px;
+  border-radius: inherit;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ============================================================
+   FEATURED HALO — pulsing orange glow in-place (never relocate the item)
+   ============================================================ */
+@keyframes hi-featured-halo {
+  0%, 100% { box-shadow: inset 0 0 0 1px rgba(217,122,42,.28); }
+  50%      { box-shadow: inset 0 0 0 1px rgba(217,122,42,.42), 0 0 24px rgba(217,122,42,.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
